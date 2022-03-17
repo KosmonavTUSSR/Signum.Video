@@ -1,0 +1,20 @@
+@font-face {
+   font-family: HelveticaLight; /* Имя шрифта */
+   src: url(./Helvetica/HelveticaLight/HelveticaLight.ttf); /* Путь к файлу со шрифтом */
+  }
+@font-face {
+  font-family: MontserratBold;
+  src: url(./Montserrat.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+  font-family: Raleway-Medium;
+  src: url(./Raleway-Medium.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+  font-family: Raleway-Black;
+  src: url(./Raleway-Black.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url(./Raleway-SemiBold.ttf); /* Путь к файлу со шрифтом */
+}
