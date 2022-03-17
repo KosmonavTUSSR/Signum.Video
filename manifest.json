@@ -1,0 +1,13 @@
+{ 
+  "name": "Signum.Video", 
+  "short_name": "SignumV", 
+  "lang": "ru-RU", 
+  "start_url": "https://signum.video/", 
+  " display ":" standalone ", 
+  " theme_color ":" # 212529 ", 
+  " icons ": [ 
+    { 
+      " src ":" https://signum.video/favicon.ico " 
+    } 
+  ] 
+}

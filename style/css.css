@@ -1,0 +1,494 @@
+html body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: #E7E7E9;
+}
+
+/* header  */
+/* тут начало вернего меню навбара */
+.header {
+  /* font-family: Helvetica, sans-serif; */
+  font-family: HelveticaLight;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.header li a {
+  color: #000000;
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #ffffff;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #00b4ff7d;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-decoration: none;
+  width: 50px;
+  margin: 3px 0px 0px 17px;
+}
+
+/* menu */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #000000;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 30px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #000000;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 10px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -10px;
+}
+
+/* menu btn */
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked~.menu {
+  max-height: 400px;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .header .logo {
+    margin: 5px 0px 0px 17px;
+  }
+
+  .header {
+    background-color: #ffffff;
+  }
+
+  .header li a {
+    border-right: 1px solid #ffffff;
+  }
+
+  .header ul {
+    background-color: #ffffff;
+  }
+}
+
+@media (min-width: 768px) {
+  .header li {
+    float: left;
+  }
+
+  .header li a {
+    padding: 15px 14px;
+  }
+
+  .videonomera_ph {
+    display: none;
+  }
+
+  .videonomera {
+    display: block;
+  }
+
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
+
+  .textgl {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  .header li a {
+    padding: 15px 40px;
+  }
+}
+
+/* Конец навбара верхнее меню */
+.infogl {
+  letter-spacing: 2px;
+  font-weight: 450;
+  line-height: 1.2em;
+  display: grid;
+}
+
+.infogl a {
+  margin-bottom: 0.5em;
+}
+
+.textgl {
+  text-align: right;
+}
+
+.hrr {
+  border: none;
+  /* Убираем границу */
+  background-color: #00B4FF;
+  /* Цвет линии */
+  color: #00B4FF;
+  /* Цвет линии для IE6-7 */
+  width: 50%;
+  float: right;
+  height: 10px;
+  opacity: 1;
+}
+
+.hrr2 {
+  height: 10px;
+  border: none;
+  /* Убираем границу */
+  background-color: #00B4FF;
+  /* Цвет линии */
+  color: #00B4FF;
+  /* Цвет линии для IE6-7 */
+  width: 100%;
+  float: left;
+}
+
+@media (max-width: 768px) {
+  .textgl {
+    text-align: center;
+  }
+
+  .videonomera_ph {
+    display: block;
+  }
+
+  .videonomera {
+    display: none;
+  }
+
+  .hrr {
+    width: 100%;
+  }
+}
+
+.install {
+  font-size: 1.4em;
+  font-weight: 300;
+  margin: 0px;
+  text-decoration: none;
+  color: #212529;
+  padding: 10px;
+}
+
+.install:hover {
+  transition: 0.5s;
+  box-shadow: 0px 0px 20px 0px rgb(34 60 80 / 20%);
+  color: #000000;
+}
+
+/* Слайдер */
+.section0 {
+  background-color: white;
+}
+
+.section1 {
+  background-color: white;
+}
+
+.section2 {
+  background-color: white;
+}
+
+.section3 {
+  background-color: white;
+}
+
+.section4 {
+  background-color: white;
+}
+
+.section5 {
+  background-color: white;
+}
+.section6 {
+  background-color: white;
+}
+
+.sectioncalc {
+  background-color: white;
+}
+
+.vsdvor {
+  font-family: 'Raleway-medium';
+  letter-spacing: 0px;
+  font-size: 3.2em;
+}
+
+@media (max-width: 991px) {
+  .vsdvor {
+    font-size: 3em;
+    margin-top: 0.8em;
+  }
+}
+
+.vsdvor2 {
+  font-family: 'Raleway-black';
+  letter-spacing: 0px;
+}
+
+.vodkadr {
+  font-family: 'Raleway-black';
+  position: absolute;
+  font-size: 1.2em
+}
+
+.vodkadr2 {
+  font-family: 'Raleway-medium';
+}
+
+.videonomera, .videonomera_ph {
+  margin: 0px auto;
+  border-radius: 15px;
+  padding: 0px;
+}
+
+.textmobile3 {
+  font-size: 1.3em;
+}
+
+.videocams {
+  width: 50%;
+}
+
+.content {
+  padding: 7rem 0;
+}
+
+.form-control {
+  height: auto;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.form-control:active, .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #000;
+}
+
+.btn, .form-control {
+  height: 55px;
+}
+
+form.border-right {
+  padding-right: 6rem !important;
+}
+
+@media (max-width: 991.98px) {
+  form.border-right {
+    padding-right: 0 !important;
+    border-right: none !important;
+  }
+}
+
+label.error {
+  font-size: 12px;
+  color: red;
+}
+
+#message {
+  resize: vertical;
+}
+
+#form-message-warning, #form-message-success {
+  display: none;
+}
+
+#form-message-warning {
+  color: #B90B0B;
+}
+
+#form-message-success {
+  color: #55A44E;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submitting {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  font-weight: bold;
+  font-size: 12px;
+  color: #000;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.fasta {
+  text-align: right;
+}
+
+@media (max-width:991px) {
+  .fasta {
+    text-align: center;
+  }
+}
+.infog {
+  font-family: 'HelveticaLight';
+  font-size:larger;
+}
+input, textarea, button {
+outline: none;
+border: none;
+background: none;
+text-align: right;
+margin-bottom: 1em;
+
+}
+input {
+  border-bottom: 1px solid #00b4ff80;
+  margin: 1em;
+  width: 60%;
+}
+.feedback{
+outline: none;
+border: none;
+background: color
+}
+.pozvonit {
+  text-align: center;
+  font-family: 'HelveticaLight';
+}
+.mobile6 {
+  text-align: right;
+}
+
+.martop {
+margin-top: 19vh;
+
+}
+@media (max-width:767px) {
+  .martop {
+    margin-top: 5vh;
+  }
+  .install {
+    text-align: center;
+  }
+
+}
+input:invalid:focus {
+  border-bottom: 0px solid black;
+  box-shadow: 0px 0px 5px 0px #00b4ff80;
+  transition: 0.3s ease;
+
+}
+input:valid {
+  box-shadow: 0px 0px 5px 0px #00b4ff80;
+  transition: 0.3s ease;
+}
+input:invalid {
+
+  border-bottom: 1px solid black;
+}
+/* _______________________________________
+тут установка камер другаея страница
+ */
+.teleho {
+  width: 7em;
+  margin: -17vh 0px 0px -4em;
+}
+.chaeho {
+  width: 8em;
+  margin: -18vh 0px 0px -11em;
+}
+
+.odin {
+  font-family: 'HelveticaNeueCyr';
+  font-size: 13em;
+  font-weight: bold;
+  color: #C7E6FF;
+  font-weight:800;
+}
+.tettxl {
+  margin:-11vh 4em 0 0;
+  font-family: 'HelveticaNeueCyr';
+}
+.tettx {
+  margin:-12vh -6em 0px 0px;
+  font-family: 'HelveticaNeueCyr';
+}
+/* _______________________________________
+тут установка Выше
+ */

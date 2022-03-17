@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" style="height:100%; width:100%;">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Signum Video - Видеонаблюдение в Оренбурге</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./style/css.css">
+  <link rel="stylesheet" href="./Fonts/fonts.css">
+  <link rel="stylesheet" type="text/css" href="./style/csspl/jquery.pagepiling.css" />
+  <link rel="stylesheet" href="./Fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+  rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="./calc/css/jquery-ui.css">
+  <link rel="stylesheet" href="./calc/css/main.css">
+</head>
+<body>
+  <!-- Прелоадер -->
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
+  <style>
+    .preloader {
+      /*фиксированное позиционирование*/
+      position: fixed;
+      /* координаты положения */
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      /* фоновый цвет элемента */
+      background: #e0e0e0;
+      /* размещаем блок над всеми элементами на странице (это значение должно быть больше,
+      чем у любого другого позиционированного элемента на странице) */
+      z-index: 1001;
+    }
+
+    .preloader__row {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      margin-top: -35px;
+      margin-left: -35px;
+      text-align: center;
+      animation: preloader-rotate 2s infinite linear;
+    }
+
+    .preloader__item {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      background-color: #01B4FF;
+      border-radius: 100%;
+      width: 35px;
+      height: 35px;
+      animation: preloader-bounce 2s infinite ease-in-out;
+    }
+
+    .preloader__item:last-child {
+      top: auto;
+      bottom: 0;
+      animation-delay: -1s;
+    }
+
+    @keyframes preloader-rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes preloader-bounce {
+
+      0%,
+      100% {
+        transform: scale(0);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+    }
+
+    .loaded_hiding .preloader {
+      transition: 0.3s opacity;
+      opacity: 0;
+    }
+
+    .loaded .preloader {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      /* Отменяем подчеркивание у ссылки */
+      color: black;
+    }
+
+    .facefront {
+      height: 100vh;
+    }
+
+    @media (max-width: 320px) {
+      .p4 {
+        margin-top: 8vh;
+        padding: 0px;
+      }
+    }
+
+    @media (min-width: 350px) {
+      .p4 {
+        padding: 1.5rem !important;
+      }
+    }
+
+    @media (max-width: 1399px) {
+      .imgmobile1 {
+        margin-top: 1em;
+      }
+
+      .textmobile2 {
+        font-size: smaller;
+      }
+    }
+
+    @media (max-height: 768px) {
+      .cammobile {
+        width: 33%;
+      }
+
+      .p4 {
+        margin-top: 1vh;
+      }
+
+      .textgl {
+        font-size: small;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .imgmobile1 {
+        margin-top: -0.5em;
+      }
+
+      .textmobile3 {
+        max-width: 90%;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .textmobile3 {
+        max-width: 90%;
+      }
+
+      h1 {
+        letter-spacing: 10px;
+      }
+    }
+    @media (max-width:767px) {
+      .mobile6 {
+        text-align: center;
+      }
+      .hrr2 {
+        width: 100%;
+      }
+
+    }
+    @media (max-width: 768px) {
+      .facefrontmb {
+        margin-top: -4vh;
+      }
+
+      .textnonem {
+        display: none;
+      }
+
+      .videocams {
+        width: 70%;
+
+      }
+
+      .textmobile2 {
+        font-size: smaller;
+      }
+
+      .mobtext {
+        justify-content: space-around;
+      }
+
+      .cammobile {
+        margin: 0px auto;
+        width: 60%;
+      }
+
+      h1 {
+        letter-spacing: 1px;
+      }
+    }
+
+    .vodkadr {
+      font-size: 0.9em;
+    }
+    }
+  </style>
+  <!-- partial:index.partial.html -->
+  <header class="header fixed-top">
+    <a href="./index.html" class="logo"><img src="./style/Logosha.png" style="width:100%"></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="">Установить камеры</a></li>
+      <li><a href="#about">Как смотреть</a></li>
+      <li><a href="#careers">Контакты</a></li>
+      <li><a href="#contact">Вопрос-Ответ</a></li>
+      <li><a href="https://my.ivideon.com/service/login/"
+        target="_blank">Личный кабинет</a></li>
+    </ul>
+  </header>
+  <div id="pagepiling">
+    <div class="pt-4 facefront facefrontmb section section0" id="gl">
+      <div class="container mt-5 p-3  ">
+        <div class="row wow fadeIn">
+          <div class="col-md-4 cammobile">
+            <img src="./style/camera_x2.png" class="img-fluid">
+          </div>
+          <div class="col-md-8 mb-5 textgl" style="margin:0px auto;">
+            <div class="p4">
+              <h1 сlass="center namesv" style="font-family: montserratbold;
+              font-size: calc(1.375rem + 2.5vw);">SIGNUM.VIDEO</h1>
+              <hr class="hrr" style="height:10px; opacity:1;">
+              <br>
+              <h4 class="mb-4">
+              </h4>
+              <h5 class="" style="font-size: calc(1.375rem + 0.5vw); line-height: 1.5em;">
+                <strong>Видеонаблюдение<br>в Вашем доме </strong>
+              </h5><br>
+              <div class="infogl">
+                <a href="viber://chat?number=%2B79010800304">+7 901 080 03 04
+                  <img src="./style/viber.png" width="100%" style="width:1.5em;">
+                </a>
+                <a href="tel:935155">(3532) 93-51-55 <img src="./style/phone.png" width="100%" style="width:1.5em;">
+                </a>
+                <a href="mailto:555652@list.ru " style="margin-bottom: 5vh;">555652@list.ru
+                  <img src="./style/mail.png" width="100%" style="width:1.5em;">
+                </a>
+                <a href=""><p class="install"
+                  style="display: initial;">УСТАНОВИТЬ ВИДЕОНАБЛЮДЕНИЕ
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 facefront section section2 ">
+      <div class="container">
+        <div class="row mobtext px-4">
+          <div class="col-lg-4 textmobile2">
+            <h1 class="vsdvor">ВЕСЬ ДВОР<br><span class="vodkadr">В ОДНОМ КАДРЕ </span></h1><br>
+            <br>
+            <hr class="hrr2" style="height:10px; opacity:1;">
+            <br>
+            <br>
+            <br>
+            <h2 style="font-family:'Raleway-SemiBold'; font-size:2em;">Устанавливаем камеры
+              <br> на верхних этажах
+            </h2>
+            <br>
+            <p style="font-family:'Raleway-SemiBold';" class="textmobile3">
+              Полный охват всей территории значительно облегчает
+              контроль за происходящим и упрощает поиск объектов.</p>
+          </div>
+          <div class="col-lg-8">
+            <img src="./style/slide 1-1.png" alt="" width="100%" class="imgmobile1 dpng">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 facefront section section3 ">
+      <div class="container">
+        <div class="row mobtext px-4">
+          <div class="col-lg-8">
+            <video id="videonomera" preload="metadata" class=" videonomeraob" src="./style/numbers.mp4" muted loop width="100%"
+            style="padding-right: 1em;">
+            </video>
+          </div>
+          <div class="col-lg-4 textmobile2">
+            <h1 class="vsdvor" style="font-size:2.7em;">НОМЕРА АВТОМОБИЛЕЙ
+              <br><span class="vodkadr" style="position:unset">ВИДНО НОЧЬЮ<br>
+               </span><br>
+              <hr class="hrr2" style="height:10px; opacity:1;">
+            </h1><br>
+            <br>
+            <h2 style="font-family:'Raleway-SemiBold'; font-size:2em;">При въезде на территорию
+              <br> устанавливаем специальные камеры
+            </h2>
+            <br>
+            <p style="font-family:'Raleway-SemiBold';" class="textmobile3">
+              Можно идентифицировать каждое авто во дворе</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 facefront section section4 ">
+      <div class="container">
+        <div class="row mobtext px-4">
+          <div class="col-lg-4 textmobile2">
+            <h1 class="vsdvor" style="font-size:2.7em;">ДЕТИ
+              <br><span class="vodkadr" style="position:unset">ПОД ПРИСМОТРОМ</span><br>
+              <hr class="hrr2" style="height:10px; opacity:1;">
+            </h1><br>
+            <br>
+            <h2 style="font-family:'Raleway-SemiBold'; font-size:2em;">Детская площадка
+              <br> крупным планом
+            </h2>
+            <br>
+            <p style="font-family:'Raleway-SemiBold';" class="textmobile3">
+              Устанавливаем камеры с 4-х кратным оптическим зумом, в которых хорошо видно самые важные объекты.</p>
+          </div>
+          <div class="col-lg-8">
+            <img src="./style/slide 3-6.png" alt="" width="100%" class="dpng">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 facefront section section5 ">
+      <div class="container">
+        <div class="row mobtext px-4 align-items-center">
+          <div class="col-lg-8" style="text-align: center;">
+            <video id="primer" src="./style/12.mp4" muted loop class="videocams">
+          </div>
+          <div class="col-lg-4 textmobile2">
+            <h1 class="vsdvor">КАМЕРЫ<br><span class="vodkadr">В ПОДЪЕЗДЕ </span></h1><br>
+            <br>
+            <hr class="hrr2" style="height:10px; opacity:1;">
+            <br>
+            <br>
+            <h2 style="font-family:'Raleway-SemiBold';">Видеонаблюдение<br>в местах общего пользования</h2>
+            <br>
+            <p style="font-family:'Raleway-SemiBold';" class="textmobile3 textnonem">
+              <i class="fa fa-check" aria-hidden="true"></i> в лифтах
+              <br><i class="fa fa-check" aria-hidden="true"></i> в лифтовых холлах
+              <br><i class="fa fa-check" aria-hidden="true"></i> на входе в подъезд
+              <br><i class="fa fa-check" aria-hidden="true"></i> на лестничных площадках
+              <br><i class="fa fa-check" aria-hidden="true"></i> на технических этажах
+              <br><i class="fa fa-check" aria-hidden="true"></i> и много где ещё...<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-4 facefront section section6 pp-scrollable ">
+      <div class="container martop">
+        <div class="row mobtext px-4">
+          <div class="col-md" >
+            <img src="./style/6-2.png" alt="" width="90%">
+            <div class="pozvonit">
+            <h4>Всегда можно позвонить:</h4>
+            <a href="tel:935155"><h3>(3532) 93-51-55 <img src="./style/phone.png"
+              width="100%" style="width:1em;"></h3></a>
+          </div>
+          </div>
+          <div class="col mobile6">
+            <h1 class="vsdvor2" style="font-family:'Raleway-SemiBold';" >НАПИШИТЕ НАМ</h1>
+            <hr class="hrr2" style="height:10px; opacity:1; float:right;">
+            <br>
+            <br>
+            <div class="infog">
+              <p>В Viber: <a href="viber://chat?number=%2B79010800304">+7 901 080 03 04</a>
+                <img src="./style/viber.png" width="100%" style="width:1.3em;">
+              </p>
+              <p>На e-mail: <a href="mailto:555652@list.ru">555652@list.ru</a>
+                <img src="./style/mail.png" width="100%" style="width:1.3em;">
+              </p>
+              <form class="feedback" id="feedform">
+                <div class="row" style="display:block;">
+                <div class="col">
+                <input type="text" name="name" id="namep" required
+                   placeholder="ВАШЕ ФИО" class="icon1"
+                  style="margin-bottom:1em; width:100%;"></div>
+                <div class="col">
+                    <input type="email" name="email" id="emailp" required
+                   placeholder="ВАШ EMAIL"
+                  style="margin-bottom:1em; width:100%;"></div>
+                <div class="col">
+                    <input type="textarea" rows="10" cols="45" id="bigtextp" name="bigtext" required
+                   placeholder="ТЕКСТ СООБЩЕНИЯ" style="height:4em; width:100%;"></div>
+                  </h3><br>
+                <div class="col"><button class="install">ОТПРАВИТЬ
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h6 class="fixed-bottom" style="text-align:center; margin-bottom:1em;">SIGNUM.VIDEO</h6>
+    </div>
+    <!-- pp-scrollable - для прокрутки содержимого без эффекта слайдера -->
+  </div>
+  <script>
+    window.onload = function() {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function() {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 100);
+    }
+  </script>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script type="text/javascript" src="./js/jspll/jquery.pagepiling.js"></script>
+<script type="text/javascript" src="./js/js.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+crossorigin="anonymous"></script>
+<script src="./calc/js/jquery-ui.min.js"></script>
+<script src="./calc/js/jquery.ui.touch-punch.min.js"></script>
+<script src="./calc/js/scriptscalc.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#pagepiling').pagepiling({
+      afterLoad: function(anchorLink, index) {
+        // $('#videonomera').trigger(index === 3 ? 'play' : 'pause')
+        // Он обращаеться к чему-то где есть id videonomera и есть это находить-
+        // ся на 3 странице(это из-за pagepiling) то плай, а после  ':' это нет
+        // верхний код равен нижниму
+        if (index === 3) {
+          $('.videonomeraob').trigger('play')
+        } else {
+          $('.videonomeraob').trigger('pause')
+        }
+        
+        if (index === 5) {
+            $('#primer').trigger('play')
+        } else {
+            $('#primer').trigger('pause')
+        }
+      }
+    });
+  });
+</script>
+// <script type="text/javascript">
+//     $(document).ready(function () {
+//         $("#form").submit(function () { // Устанавливаем событие отправки для формы с id=form
+//             var form_data = $(this).serialize(); // Собираем все данные из формы
+//             $.ajax({
+//                 type: "POST", // Метод отправки
+//                 url: "./mail.php", // Путь до php файла отправителя
+//                 data: form_data,
+//                 success: function () {
+//                     // Код в этом блоке выполняется при успешной отправке сообщения
+//                     alert("Ваше сообщение отправлено!");
+//                 }
+//             });
+//         });
+//     });    
+// </script>
+</html>
